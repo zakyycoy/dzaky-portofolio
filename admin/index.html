@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin | DZAKY.DEV</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <header class="topbar">
+      <a class="brand" href="/">DZAKY<span>.DEV</span></a>
+      <span>ADMIN PANEL</span>
+    </header>
+
+    <section id="login-view" class="panel login-panel">
+      <p class="eyebrow">PRIVATE ACCESS</p>
+      <h1>Login Admin</h1>
+      <p class="muted">Masuk untuk mengelola portfolio lu.</p>
+
+      <form id="login-form">
+        <label for="username">Username</label>
+        <input id="username" autocomplete="username" required>
+
+        <label for="password">Password</label>
+        <input id="password" type="password"
+          autocomplete="current-password" required>
+
+        <button type="submit">Masuk Dashboard ↗</button>
+      </form>
+      <p id="login-status" class="status" role="status"></p>
+    </section>
+
+    <section id="dashboard-view" hidden>
+      <div class="heading">
+        <div>
+          <p class="eyebrow">OVERVIEW</p>
+          <h1>Dashboard</h1>
+          <p class="muted">Selamat datang, <strong id="admin-name"></strong></p>
+        </div>
+        <button id="logout-button" class="secondary">Logout</button>
+      </div>
+
+      <section class="stats">
+        <article class="panel">
+          <p class="muted">Total Project</p>
+          <h2 id="project-count">0</h2>
+        </article>
+        <article class="panel">
+          <p class="muted">Status Backend</p>
+          <h2>Online</h2>
+        </article>
+      </section>
+
+      <section class="panel">
+        <h2 id="form-heading">Tambah Project</h2>
+        <form id="project-form">
+          <input id="project-id" type="hidden">
+
+          <label for="title">Nama Project</label>
+          <input id="title" maxlength="150" required>
+
+          <label for="description">Deskripsi</label>
+          <textarea id="description" rows="4"
+            maxlength="5000" required></textarea>
+
+          <label for="technologies">Teknologi</label>
+          <input id="technologies" placeholder="HTML, CSS, JavaScript">
+
+          <label for="project-url">Link Project</label>
+          <input id="project-url" type="url"
+            placeholder="https://contoh.com">
+
+          <div class="actions">
+            <button id="save-button" type="submit">Simpan Project</button>
+            <button id="cancel-button" type="button"
+              class="secondary" hidden>Batal Edit</button>
+          </div>
+        </form>
+        <p id="project-status" class="status" role="status"></p>
+      </section>
+
+      <section class="panel">
+        <h2>Daftar Project</h2>
+        <div id="project-list" class="project-list"></div>
+      </section>
+    </section>
+  </main>
+</body>
+</html>

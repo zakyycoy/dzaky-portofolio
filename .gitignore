@@ -1,0 +1,19 @@
+
+# File rahasia
+.env
+.env.*
+!.env.example
+backend/.env
+
+# Dependencies Node.js
+node_modules/
+backend/node_modules/
+
+# Log
+*.log
+npm-debug.log*
+
+# File sistem operasi
+.DS_Store
+Thumbs.db
+.vscode/
